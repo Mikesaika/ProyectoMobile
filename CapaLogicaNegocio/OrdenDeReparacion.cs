@@ -3,45 +3,67 @@ using System.Collections.Generic;
 
 namespace ServicioTecnicoCelular.CS
 {
+    // Clase que representa una orden de reparación completa
     public class OrdenDeReparacion
     {
+        // Campo privado para el código único de la orden
         private int codigo;
+
+        // Propiedad que representa el celular asociado a la orden
         public Celular celular { get; set; }
+
+        // Estado actual de la orden (ej. En proceso, Completada)
         public string estadoOrden { get; set; }
-        //public string propietario { get; set; }        
+
+        // Campo privado para almacenar la fecha de la orden
         private DateTime fecha;
-        public string TipoServicio {  get; set; }
-        //public string tecnico { get; set; }
+
+        // Tipo de servicio solicitado (ej. Reparación, Mantenimiento)
+        public string TipoServicio { get; set; }
+
+        // Técnico asignado a la orden, representado como un objeto
         public Tecnico tecnico { get; set; }
+
+        // Detalles específicos sobre la razón de la reparación
         public string motivo { get; set; }
+
+        // Diagnóstico proporcionado para el problema del dispositivo
         public string diagnostico { get; set; }
+
+        // Descripción del trabajo realizado en el dispositivo
         public string TrabajoRealizado { get; set; }
+
+        // Indica si el cliente autorizó la reparación
         public bool autorizado { get; set; }
+
+        // Lista de detalles de la orden, como piezas o servicios utilizados
         public List<OrdenReparacionDetalle> detalles { get; set; } = new List<OrdenReparacionDetalle>();
-        //public OrdenTrabajoDetalle detalles { get; set; }
+
+        // Subtotal calculado de los costos de la orden
         public double Subtotal { get; set; }
-        public double Iva { get; set;  }
+
+        // Valor del IVA aplicado a la orden
+        public double Iva { get; set; }
+
+        // Total de la orden (Subtotal + IVA)
         public double Total { get; set; }
 
+        // Indica si la orden está activa o cerrada
         public bool estado { get; set; }
 
-        //private Cliente cliente_mantenimiento;
-        //public Vehiculo Vehiculo { get; set; }
-        //public Mecanico mecanico_mantenimiento { get; set; }
-        //public TipoMantenimiento TipoMantenimiento { get; set; }
-        //public List<Item> Items { get; set; }
-
+        // Constructor que inicializa la lista de detalles
         public OrdenDeReparacion()
         {
-            //Items = new List<Item>();
             detalles = new List<OrdenReparacionDetalle>();
         }
 
+        // Propiedad para el código único, con validación
         public int Codigo
         {
             get { return codigo; }
             set
             {
+                // Valida que el código sea mayor a cero
                 if (value > 0)
                 {
                     codigo = value;
@@ -53,11 +75,13 @@ namespace ServicioTecnicoCelular.CS
             }
         }
 
+        // Propiedad para la fecha de la orden, con validación
         public DateTime Fecha
         {
             get { return fecha; }
             set
             {
+                // Valida que la fecha no sea nula
                 if (value == null)
                 {
                     throw new ArgumentNullException(nameof(Fecha), "La fecha no puede ser nula.");
@@ -67,95 +91,5 @@ namespace ServicioTecnicoCelular.CS
             }
         }
 
-        /*public string DiagnosticoTrabajoRealizado
-        {
-            get { return diagnostico_trabajo_realizado; }
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    diagnostico_trabajo_realizado = value;
-                }
-                else
-                {
-                    throw new ArgumentException("El diagnóstico / trabajo realizado no puede ser nulo o vacío.");
-                }
-            }
-        }*/
-
-        /*public string TrabajoRealizado
-        {
-            get { return trabajo_realizado; }
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    trabajo_realizado = value;
-                }
-                else
-                {
-                    throw new ArgumentException("El trabajo realizado no puede ser nulo o vacío.");
-                }
-            }
-        }*/
-
-        //public string TipoMantenimiento
-        //{
-        //    get { return tipo_mantenimiento; }
-        //    set
-        //    {
-        //        if (!string.IsNullOrEmpty(value))
-        //        {
-        //            tipo_mantenimiento = value;
-        //        }
-        //        else
-        //        {
-        //            throw new ArgumentException("El tipo de mantenimiento no puede ser nulo o vacío.");
-        //        }
-        //    }
-        //}
-
-        //public List<TipoMantenimiento> Detalles
-        //{
-        //    get { return detalles; }
-        //    set
-        //    {
-        //        if (value == null)
-        //        {
-        //            throw new ArgumentNullException(nameof(Detalles), "La lista de detalles no puede ser nula.");
-        //        }
-
-        //        foreach (var detalle in value)
-        //        {
-        //            if (detalle == null)
-        //            {
-        //                throw new ArgumentException("La lista de detalles no puede contener elementos nulos.", nameof(Detalles));
-        //            }
-        //        }
-
-        //        detalles = value;
-        //    }
-        //}
-
-        //public void AgregarDetalle(TipoMantenimiento detalle)
-        //{
-        //    if (detalle == null)
-        //    {
-        //        throw new ArgumentNullException(nameof(detalle), "El detalle no puede ser nulo.");
-        //    }
-
-        //    Detalles.Add(detalle);
-        //}
-
-        //public void MostrarInformacion()
-        //{                        
-        //    //Console.WriteLine($"Descripción del Mantenimiento: {Descripcion}");
-
-        //    foreach (var detalle in Detalles)
-        //    {
-        //        detalle.MostrarInformacion();
-        //        Console.WriteLine();
-        //    }
-        //}
     }
 }
