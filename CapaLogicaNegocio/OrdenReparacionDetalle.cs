@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +8,7 @@ namespace ServicioTecnicoCelular.CS
 {
     public class OrdenReparacionDetalle
     {
+       // Clase que representa los detalles de una orden de reparación con sus atributos
         public int id {  get; set; }
         public int codigo {  get; set; }
 
@@ -21,3 +22,5 @@ namespace ServicioTecnicoCelular.CS
         public double Total { get; set; }   
     }
 }
+
+
