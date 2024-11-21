@@ -1,36 +1,27 @@
-﻿using System;
+using System;
 
 namespace ServicioTecnicoCelular.CS
 {
+    // Clase base abstracta que representa un ítem genérico
     public abstract class Item
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
 
-        public double Costo { get; set; }
-        public double Precio { get; set; }
+        // Propiedades para los valores económicos del ítem
+        public double Costo { get; set; } // Costo de adquisición o producción
+        public double Precio { get; set; } // Precio de venta al cliente
 
-        public string TipoItem {  get; set; } 
-        public bool Estado {  get; set; }
+        // Propiedad que describe el tipo de ítem (ej. Repuesto, Servicio)
+        public string TipoItem { get; set; }
 
-        /*protected Item(string nombre, double precio)
-        {
-            if (string.IsNullOrWhiteSpace(nombre))
-            {
-                throw new ArgumentException("El nombre no puede estar vacío.", nameof(nombre));
-            }
+        public bool Estado { get; set; }
 
-            if (precio <= 0)
-            {
-                throw new ArgumentException("El precio debe ser mayor que cero.", nameof(precio));
-            }
-
-            Nombre = nombre;
-            Precio = precio;
-        }*/
-
+        // Método virtual para mostrar información del ítem
+        // Puede ser sobrescrito en clases derivadas
         public virtual void MostrarInformacion()
         {
+            // Muestra el nombre y el precio del ítem
             Console.WriteLine($"Nombre: {Nombre}, Precio: {Precio:C}");
         }
     }
