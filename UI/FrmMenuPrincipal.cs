@@ -1,4 +1,5 @@
-﻿using ServicioTecnicoCelular.UI;
+//USUARIO Y CONTRASEÑA PARA ENTRAR AL SISTEMA TALLER TÉCNICO CELULAR EN VISUAL ESTUDIO: USUARIO: admin CONTRASEÑA: admin
+using ServicioTecnicoCelular.UI;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
