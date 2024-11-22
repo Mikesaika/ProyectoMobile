@@ -1,4 +1,5 @@
-﻿using System;
+//USUARIO Y CONTRASEÑA PARA ENTRAR AL SISTEMA TALLER TÉCNICO CELULAR EN VISUAL ESTUDIO: USUARIO: admin CONTRASEÑA: admin
+using System;
 using System.Collections.Generic;
 
 namespace ServicioTecnicoCelular.CS
