@@ -1,4 +1,5 @@
-﻿using ServicioTecnicoCelular.BD;
+//USUARIO Y CONTRASEÑA PARA ENTRAR AL SISTEMA TALLER TÉCNICO CELULAR EN VISUAL ESTUDIO: USUARIO: admin CONTRASEÑA: admin
+using ServicioTecnicoCelular.BD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
