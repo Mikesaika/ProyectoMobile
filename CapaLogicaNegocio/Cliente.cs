@@ -1,3 +1,4 @@
+//USUARIO Y CONTRASEÑA PARA ENTRAR AL SISTEMA TALLER TÉCNICO CELULAR EN VISUAL ESTUDIO: USUARIO: admin CONTRASEÑA: admin
 using ServicioTecnicoCelular.CS;
 using System;
 using System.Collections.Generic;
